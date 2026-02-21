@@ -7,7 +7,7 @@ on:
     branches:
       - master
     paths:
-      - /**
+      - ./**
 permissions:
   packages: write
 
@@ -42,8 +42,8 @@ jobs:
           password: ${{ secrets.TOKEN}}
       - uses: docker/build-push-action@v6
         with:
-          context: ./nodejs-prem
-          file: ./nodejs-prem/${{ matrix.tag }}/Dockerfile
+          context: ./
+          file: ./${{ matrix.tag }}/Dockerfile
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
