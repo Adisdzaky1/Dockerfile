@@ -7,13 +7,13 @@ on:
     branches:
       - master
     paths:
-      - nodejs-prem/**
+      - /**
 permissions:
   packages: write
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: relixhost/enginevip
+  IMAGE_NAME: Adisdzaky1/enginevip
   
 jobs:
   push:
@@ -24,7 +24,6 @@ jobs:
       matrix:
         tag:
           - lts-vip
-          - latest-vip
     steps:
       - uses: actions/checkout@v4
       # Setup QEMU for ARM64 Build
@@ -40,7 +39,7 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ steps.lower-repo.outputs.repository }}
-          password: ${{ secrets.REGISTRY_TOKEN || secrets.TOKEN }}
+          password: ${{ secrets.TOKEN}}
       - uses: docker/build-push-action@v6
         with:
           context: ./nodejs-prem
