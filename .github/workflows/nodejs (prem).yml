@@ -13,7 +13,7 @@ permissions:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: Adisdzaky1/enginevip
+  IMAGE_NAME: adisdzaky1/enginevip
   
 jobs:
   push:
